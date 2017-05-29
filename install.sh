@@ -50,3 +50,14 @@ select opt in $OPTIONS; do
     else echo "Bad entry, please select (1) for yes or (2) for no."
     fi
 done
+
+# Discern whether the command alias is set.
+if grep -Fxq "alias gitstat" ~/.bash_profile
+then
+    echo "Alias already set"
+else
+    thisDir=$(pwd)
+    echo "alias gitstat='sh $thisDir/gitstat.sh'" >> ~/.bash_profile
+    source ~/.bash_profile
+    echo "Alias has been set - use command 'gitstat' to run the program."
+fi
