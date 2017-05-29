@@ -54,19 +54,20 @@ fi
 case $choice in
     1 )
         for repo in $repolist; do
-		handler stat $repo
+			handler stat $repo
         done
-	handler stat $MYREPOS/moodledocker/turnitintool
-	handler stat $MYREPOS/moodledocker/turnitintooltwo
+		handler stat $MYREPOS/moodledocker/turnitintool
+		handler stat $MYREPOS/moodledocker/turnitintooltwo
         ;;
     2 )
         for repo in $repolist; do
-		handler fetch $repo
+			handler fetch $repo
         done
-	handler fetch $MYREPOS/moodledocker/turnitintool
-	handler fetch $MYREPOS/moodledocker/turnitintooltwo
-	;;
+		handler fetch $MYREPOS/moodledocker/turnitintool
+		handler fetch $MYREPOS/moodledocker/turnitintooltwo
+		;;
     * )
-        
+		echo "Invalid choice input: $choice. Please try again."
+		;;
 esac
 cd $origin
