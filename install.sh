@@ -58,6 +58,7 @@ then
 else
     thisDir=$(pwd)
     echo "alias gitstat='sh $thisDir/gitstat.sh'" >> ~/.bash_profile
+    echo $thisDir >> ./lib/locations.txt
     source ~/.bash_profile
     echo "Alias has been set - use command 'gitstat' to run the program."
 fi
